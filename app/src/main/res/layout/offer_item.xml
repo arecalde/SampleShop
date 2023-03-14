@@ -1,0 +1,68 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="offer"
+            type="com.example.sampleshop.model.OfferItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image"
+            imageUrl="@{ offer.getImageUrl() }"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+
+            android:background="@drawable/round_outline"
+            android:paddingVertical="6dp"
+            android:layout_marginHorizontal="4dp"
+
+            android:contentDescription="@string/thumbnail"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="@{ offer.currentValue }"
+            tools:text="10% off"
+            android:id="@+id/discount"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textColor="#4A4A4A"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_marginTop="3dp"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:text="@{offer.name}"
+            tools:text="Example Product"
+            android:id="@+id/name"
+            android:fontFamily="sans-serif"
+            android:textColor="#4A4A4A"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/discount"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

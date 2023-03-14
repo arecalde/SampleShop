@@ -3,6 +3,7 @@ package com.example.sampleshop.model
 import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import com.example.sampleshop.helpers.Event
 import com.google.gson.annotations.SerializedName
 import com.squareup.picasso.Picasso
 
@@ -15,8 +16,13 @@ class OfferItem (
   @SerializedName("terms"         ) var terms        : String? = null,
   @SerializedName("current_value" ) var currentValue : String? = null
 ) {
+  val launchDetails: Event<Unit> = Event(Unit)
+
+  fun launchDetailsFragment() = launchDetails.raiseEvent(Unit)
   fun getImageUrl() = url ?: "https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-gray-network-placeholder-png-image_3416659.jpg"
 }
+
+data class OfferDetail(val title: String, val value: String)
 
 @BindingAdapter("imageUrl")
 fun loadImage(view : View, url : String?){

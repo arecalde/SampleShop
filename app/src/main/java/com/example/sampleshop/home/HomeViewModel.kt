@@ -15,6 +15,4 @@ class HomeViewModel(private val application: Application) : AndroidViewModel(app
     init {
         listOfOffers.value = OfferParser.parseJson(context)
     }
-
-
 }

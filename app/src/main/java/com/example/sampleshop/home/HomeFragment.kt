@@ -15,7 +15,6 @@ import com.example.sampleshop.helpers.ItemAdapter
 import com.example.sampleshop.model.OfferItem
 
 class HomeFragment : Fragment() {
-
     private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(
@@ -33,10 +32,15 @@ class HomeFragment : Fragment() {
                     offerItem, offerItemBinding ->
                     offerItemBinding.offer = offerItem
                 }
+
             it.forEach { offerItem ->
                 offerItem.launchDetails.observeEvent(viewLifecycleOwner) {
                     val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(offerItem.id.orEmpty())
                     findNavController().navigate(action)
+                }
+
+                context?.let { fragmentContext ->
+                    offerItem.changeDrawable(fragmentContext)
                 }
             }
         }

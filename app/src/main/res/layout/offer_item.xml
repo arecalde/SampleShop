@@ -20,11 +20,10 @@
             imageUrl="@{ offer.getImageUrl() }"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-
-            android:background="@drawable/round_outline"
+            android:background="@{ offer.drawable }"
+            tools:background="@drawable/round_outline"
             android:paddingVertical="6dp"
             android:layout_marginHorizontal="4dp"
-
             android:contentDescription="@string/thumbnail"
             android:src="@drawable/ic_launcher_background"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,8 +44,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/image"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
             android:layout_width="0dp"
@@ -61,9 +59,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/discount"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
-
-
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

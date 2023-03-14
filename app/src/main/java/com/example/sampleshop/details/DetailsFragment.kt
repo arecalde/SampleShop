@@ -14,8 +14,6 @@ import com.example.sampleshop.helpers.ItemAdapter
 import com.example.sampleshop.model.OfferDetail
 
 class DetailsFragment : Fragment() {
-
-
     private val args: DetailsFragmentArgs by navArgs()
 
     private val viewModel: DetailsViewModel by viewModels {
